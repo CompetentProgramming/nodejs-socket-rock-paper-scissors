@@ -1,0 +1,287 @@
+
+/* @import url('https://fonts.google.com/specimen/Barlow+Semi+Condensedhttps://fonts.google.com/specimen/Barlow+Semi+Condensed'); */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+.flex-row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.flex-column {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+body {
+    margin: 0;
+    padding: 5px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    height: 100vh;
+    position: relative;
+    background: radial-gradient(circle at top,hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+
+.title-block {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    border: 2px solid hsl(217, 16%, 45%);
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 700px;
+}
+
+.game-title {
+    list-style-type: none;
+    padding: 0;
+    font-size: 25px;
+}
+
+
+.score {
+    background: #fff;
+    width: 200px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.score-title {
+    color: hsl(229, 64%, 46%);
+    text-transform: uppercase;
+}
+
+.score-count {
+    color: hsl(229, 25%, 31%);
+    font-size: 40px;
+}
+
+/* User choice */
+
+.user-choice {
+    background: center / contain no-repeat url(../images/bg-pentagon.svg) ;
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.user-choice.hidden {
+    display: none;
+}
+
+.game-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.game-card img {
+    position: relative;
+    z-index: 2;
+}
+
+.game-card:before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background: rgba(255,255,255, 1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0px 3px 5px 0px hsl(229, 25%, 31%);
+    transition: background .5s ease-in, box-shadow .5s ease-in;
+    position: absolute;
+    z-index: 1;
+}
+
+.game-card:before:hover {
+    background: rgba(255,255,255, 0);
+    box-shadow: none;
+}
+
+.game-card.scissors {
+    background: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    box-shadow: inset 0px -6px 0px 0px hsl(28, 75%, 44%);
+}
+
+.game-card.paper {
+    background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+    box-shadow: inset 0px -6px 0px 0px hsl(229, 62%, 34%);
+}
+
+.game-card.rock {
+    background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    box-shadow: inset 0px -6px 0px 0px hsl(343, 70%, 30%);
+}
+
+.game-card.lizard {
+    background: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+    box-shadow: inset 0px -6px 0px 0px hsl(259, 48%, 38%);
+}
+
+.game-card.spock {
+    background: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+    box-shadow: inset 0px -6px 0px 0px hsl(197, 54%, 36%);
+}
+
+/* Picked section */
+
+.picked {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+}
+.picked.hidden {
+    display: none;
+}
+
+.choice {
+    width: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 100%;
+}
+
+.empty .inner-circle {
+    background: hsl(224, 47%, 17%);
+    box-shadow: none;
+}
+
+/* Result block */
+
+.result {
+    white-space: nowrap;
+    font-size: 30px;
+}
+
+.result.hidden {
+    display: none;
+}
+
+.result .title {
+    margin-bottom: 15px;
+}
+
+.result button {
+    border: 1px solid hsl(217, 16%, 45%);
+    padding: 15px 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: linear-gradient(to left, #fff 50%, transparent 50%);
+    background-size: 250% 100%;
+    background-position: right bottom;
+    transition: background-position .5s ease-out, color .5s ease-out;
+}
+
+.result button:hover {
+    background-position: left bottom;
+    color: #fff;
+}
+
+
+/* Rules modal */
+
+.rules-btn {
+    border: 1px solid hsl(217, 16%, 45%);
+    padding: 5px 25px;
+    border-radius: 5px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    background: linear-gradient(to left, transparent 50%, #fff 50%);
+    background-size: 250% 100%;
+    background-position: right bottom;
+    transition: background-position .5s ease-out, color .5s ease-out;
+}
+
+.rules-btn:hover {
+    background-position: left bottom;
+    color: hsl(214, 47%, 23%);
+}
+
+.modal-bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 50%);
+}
+
+.modal-bg.active {
+    display: block;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px 30px 30px;
+    border-radius: 10px;
+    top: 40px;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal .close {
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+}
+
+.modal .title {
+    color: hsl(229, 25%, 31%);
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.modal .content {
+    text-align: center;
+}
+
+
+/* Media */
+
+@media only screen and (max-width: 768px) {
+    .title-block {
+        max-width: 375px;
+    }
+}

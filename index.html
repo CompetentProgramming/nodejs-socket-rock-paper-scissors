@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+</head>
+<body>
+  <!-- title sections -->
+  <section class="title-block">
+    <ul class="game-title">
+      <li>Rock</li>
+      <li>Paper</li>
+      <li>Scissors</li>
+      <li>Lizard</li>
+      <li>Spock</li>
+    </ul>
+    <div class="score">
+      <span class="score-title">Score</span>
+      <span class="score-count">12</span>
+    </div>
+  </section> 
+
+  <!-- user-choice -->
+  <section class="user-choice">
+    <div class="game-card scissors"><img src="/images/icon-scissors.svg" alt=""></div>
+    <div class="game-card paper"><img src="/images/icon-paper.svg" alt=""></div>
+    <div class="game-card rock"><img src="/images/icon-rock.svg" alt=""></div>
+    <div class="game-card lizard"><img src="/images/icon-lizard.svg" alt=""></div>
+    <div class="game-card spock"><img src="/images/icon-spock.svg" alt=""></div>
+  </section>
+
+  <!-- Picked section -->
+
+  <section class="picked hidden">
+    <div class="choice">
+      <p>You picked</p>
+      <div class="user-pick"></div>
+    </div>
+    <div class="result hidden">
+      <div class="title">You lose</div>
+      <button>Play again</button>
+    </div>
+    <div class="choice">
+      <p>The house picked</p>
+      <div class="pc-pick"></div>
+    </div>
+  </section>
+
+  <!-- Rules block -->
+  <div class="rules-btn">Rules</div>
+  <div class="modal-bg"></div>
+  <div class="modal">
+    <span class="close">
+      <img src="/images/icon-close.svg" alt="">
+    </span>
+    <div class="title">Rules</div>
+    <div class="content">
+      <img src="/images/image-rules-bonus.svg" alt="">
+    </div>
+  </div>
+  <div class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. </p>
+    
+    <p>Coded by [Competent Programing] 
+      <a href="https://twitter.com/competent_dev" target="blanks">Twitter</a>
+      <a href="https://www.youtube.com/channel/UCZBwn0Sdl3mabNeDCIJmNlg" target="blank">YouTube</a>
+    </p>
+  </div>
+  <script src="/js/script.js"></script>
+</body>
+</html>
